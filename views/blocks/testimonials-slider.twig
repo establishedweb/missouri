@@ -1,0 +1,58 @@
+{# views/blocks/testimonials-slider.twig #}
+
+<div class="testimonials-slider-wrapper">
+    <!-- Swiper -->
+    <div class="swiper-container testimonials-slider">
+        <div class="swiper-wrapper">
+            {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content-wrapper">
+                            {% if testimonial.thumbnail %}
+                                <div class="testimonial-image">
+                                    <img src="{{ testimonial.thumbnail.src|resize(150, 150) }}" alt="{{ testimonial.title }}">
+                                </div>
+                            {% endif %}
+                            <div class="testimonial-text">
+                                <div class="testimonial-content">
+                                    <blockquote>
+                                        {{ testimonial.content|raw }}
+                                    </blockquote>
+                                </div>
+                                <div class="testimonial-author">
+                                    <strong>{{ testimonial.title }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<!-- Initialize Swiper -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper('.testimonials-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
+</script>

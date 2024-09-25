@@ -1,0 +1,117 @@
+/* Slider Wrapper */
+.testimonials-slider-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Swiper Container */
+.testimonials-slider {
+    overflow: hidden;
+}
+
+/* Testimonial Item */
+.testimonial-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Content Wrapper */
+.testimonial-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Testimonial Image */
+.testimonial-image {
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+}
+
+.testimonial-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    flex: 1;
+}
+
+.testimonial-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #333;
+    z-index: 10;
+}
+
+.swiper-button-prev {
+    left: -2.5rem;
+}
+
+.swiper-button-next {
+    right: -2.5rem;
+}
+
+/* Adjusting the size of navigation icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.5rem;
+}
+
+/* Dots Pagination */
+.swiper-pagination {
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .testimonials-slider-wrapper {
+        max-width: 75%;
+    }
+    .testimonial-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .testimonial-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
